@@ -60,6 +60,10 @@ function mostrarStock() {
 }
 
 
+
+
+//PODRIA SER MODELO O ALGO MÁS ESPECIFICO PARA COMPRAR, POR AHORA ES A MODO DE EJEMPLO!
+
 //CARRITO
 const carrito = []
 //PUSHEAR AL CARRITO
@@ -88,6 +92,16 @@ function SumaPatentamiento() {
 }
 
 SumaPatentamiento()
+
+
+
+
+
+
+
+
+
+
 
 //LLAMAMOS A LA FUNCION
 

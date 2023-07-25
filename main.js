@@ -104,7 +104,7 @@ function SumaPatentamiento() {
 
 //LLAMAMOS A LA FUNCION
 
-let elegirAccion = elegirAccion = Number(prompt("BUSCAR 1-Marca-, 2-Modelo-, 3-Stock- // 4-Comprar, patentamiento"))
+let elegirAccion = Number(prompt("BUSCAR 1-Marca-, 2-Modelo-, 3-Stock- // 4-Comprar, patentamiento"))
 
 //BUCLE VA A PARAR CUANDO SE INGRESE UNA LETRA!
 

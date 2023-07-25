@@ -76,11 +76,24 @@ function pushearCarrito() {
 
 }
 
+//SUMA DE PATENTAMIENTO AL CARRITO AL TERMINAR EL BUCLE Y LO MUESTRA POR CONSOLA
+
+function SumaPatentamiento() {
+
+    let resultado = carrito.map((patentado) => patentado.precio * 1.5)
+    if (resultado.length > 0)
+
+        console.log(resultado)
+
+}
+
+SumaPatentamiento()
 
 //LLAMAMOS A LA FUNCION
 
-let elegirAccion = Number(prompt("BUSCAR 1-Marca-, 2-Modelo-, 3-Stock- // 4-Comprar-"))
+let elegirAccion = Number(prompt("(BUSCAR 1-Marca-, 2-Modelo-, 3-Stock-, 4-Comprar- 5-Suma Patente Carrito-/// PARA CON BUCLE CON CUALQUIER LETRA"))
 
+//BUCLE VA A PARAR CUANDO SE INGRESE UNA LETRA!
 
 while (!isNaN(elegirAccion)) {
     switch (elegirAccion) {
@@ -95,10 +108,12 @@ while (!isNaN(elegirAccion)) {
             break;
         case 4:
             pushearCarrito()
+        case 5:
+            SumaPatentamiento()
         default:
             break;
     }
-    elegirAccion = Number(prompt("BUSCAR 1-Marca-, 2-Modelo-, 3-Stock- // 4-Comprar-"))
+    elegirAccion = Number(prompt("BUSCAR 1-Marca-, 2-Modelo-, 3-Stock- // 4-Comprar- 5-Suma del patentamiento de la compra-"))
 
 
 }
@@ -106,15 +121,3 @@ alert("Por favor, refresca e ingresa un número válido.");
 
 
 
-//SUMA DE PATENTAMIENTO AL CARRITO AL TERMINAR EL BUCLE Y LO MUESTRA POR CONSOLA
-
-function SumaPatentamiento() {
-
-    let resultado = carrito.map((patentado) => patentado.precio * 1.5)
-    if (resultado.length > 0)
-
-        console.log(resultado)
-
-}
-
-SumaPatentamiento()

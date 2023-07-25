@@ -60,9 +60,26 @@ function mostrarStock() {
 }
 
 
+//CARRITO
+const carrito = [] 
+//PUSHEAR AL CARRITO
+function pushearCarrito() {
+    let pusheo = prompt("Marca por Comprar").trim().toUpperCase()
+    let resultado = listaDeAutos.filter((auto =>auto.marca.toUpperCase().includes(pusheo)))
+    let enStock = resultado.filter(auto => auto.stock !== 0)
+    if (enStock.length > 0) {
+        carrito.push(...enStock)
+        console.table(carrito)
+    } else {
+        alert("No hay coincidencia con " + pusheo)
+    }
+    
+}
+
+
 //LLAMAMOS A LA FUNCION
 
-let elegirAccion = prompt("INGRESE: 1-Marca-, 2-modelo-, 3-Mostrar Stock-")
+let elegirAccion = prompt("BUSCAR 1-Marca-, 2-Modelo-, 3-Stock- // 4-Comprar-")
 
 while (elegirAccion) {
     switch (elegirAccion) {
@@ -75,10 +92,27 @@ while (elegirAccion) {
         case "3":
             mostrarStock()
             break;
+        case "4":
+            pushearCarrito()
         default:
             break;
-    } if (elegirAccion != isNaN) {
-        alert("Seleccione un numero del 1 al 3")
     }
-    elegirAccion = prompt("INGRESE: 1-Marca-, 2-modelo-, 3-Mostrar Stock-")
+    elegirAccion = prompt("BUSCAR 1-Marca-, 2-Modelo-, 3-Stock- // 4-Comprar-")
+
 }
+
+
+
+
+//SUMA DE PATENTAMIENTO AL CARRITO
+
+function SumaPatentamiento() {
+    
+    let resultado = carrito.map((patentado) => patentado.precio * 1.5)
+        if (resultado.length > 0)
+        
+        console.log(resultado)
+    
+    }
+
+    SumaPatentamiento()

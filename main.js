@@ -84,10 +84,10 @@ function pushearCarrito() {
 
 function SumaPatentamiento() {
 
-    let resultado = carrito.map((patentado) => patentado.precio * 1.5)
-    if (resultado.length > 0) {
+    let totalCompra = carrito.map((patentado) => patentado.precio * 1.5)
+    if (totalCompra.length > 0) {
 
-        console.table(resultado)
+        console.table(totalCompra)
     }
 }
 
@@ -104,7 +104,7 @@ function SumaPatentamiento() {
 
 //LLAMAMOS A LA FUNCION
 
-let elegirAccion = Number(prompt("BUSCAR 1-Marca-, 2-Modelo-, 3-Stock- // 4-Comprar, patentamiento"))
+let elegirAccion = Number(prompt("BUSCAR 1-Marca- 2-Modelo- 3-Stock- 4-Comprar-Patentamiento Carrito-"))
 
 //BUCLE VA A PARAR CUANDO SE INGRESE UNA LETRA!
 
@@ -117,14 +117,16 @@ while (!isNaN(elegirAccion)) {
             filtrarAutosModelo();
             break;
         case 3:
-            mostrarStock()
+            mostrarStock();
             break;
         case 4:
-            pushearCarrito()
+            pushearCarrito();
+        case 5: 
+            SumaPatentamiento();
         default:
             break;
     }
-    elegirAccion = Number(prompt("BUSCAR 1-Marca-, 2-Modelo-, 3-Stock- // 4-Comprar, patentamiento"))
+    elegirAccion = Number(prompt("BUSCAR 1-Marca- 2-Modelo- 3-Stock- 4-Comprar-Patentamiento Carrito-"))
 
 
 }

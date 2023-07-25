@@ -85,10 +85,10 @@ function pushearCarrito() {
 function SumaPatentamiento() {
 
     let resultado = carrito.map((patentado) => patentado.precio * 1.5)
-    if (resultado.length > 0)
+    if (resultado.length > 0) {
 
-        console.log(resultado)
-
+        console.table(resultado)
+    }
 }
 
 
@@ -104,7 +104,7 @@ function SumaPatentamiento() {
 
 //LLAMAMOS A LA FUNCION
 
-let elegirAccion = Number(prompt("(BUSCAR 1-Marca-, 2-Modelo-, 3-Stock-, 4-Comprar- 5-Suma Patente Carrito-/// PARAR EL BUCLE CON CUALQUIER LETRA"))
+let elegirAccion = elegirAccion = Number(prompt("BUSCAR 1-Marca-, 2-Modelo-, 3-Stock- // 4-Comprar, patentamiento"))
 
 //BUCLE VA A PARAR CUANDO SE INGRESE UNA LETRA!
 
@@ -121,12 +121,10 @@ while (!isNaN(elegirAccion)) {
             break;
         case 4:
             pushearCarrito()
-        case 5:
-            SumaPatentamiento()
         default:
             break;
     }
-    elegirAccion = Number(prompt("BUSCAR 1-Marca-, 2-Modelo-, 3-Stock- // 4-Comprar- 5-Suma del patentamiento de la compra-"))
+    elegirAccion = Number(prompt("BUSCAR 1-Marca-, 2-Modelo-, 3-Stock- // 4-Comprar, patentamiento"))
 
 
 }

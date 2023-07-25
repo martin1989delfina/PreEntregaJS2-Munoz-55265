@@ -1,0 +1,1 @@
+funciones proceso a simular, objetos jsm arrays y objetos de busqueda y filtrado. 

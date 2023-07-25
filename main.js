@@ -61,11 +61,11 @@ function mostrarStock() {
 
 
 //CARRITO
-const carrito = [] 
+const carrito = []
 //PUSHEAR AL CARRITO
 function pushearCarrito() {
-    let pusheo = prompt("Marca por Comprar").trim().toUpperCase()
-    let resultado = listaDeAutos.filter((auto =>auto.marca.toUpperCase().includes(pusheo)))
+    let pusheo = prompt("Elegí marca a comprar").trim().toUpperCase()
+    let resultado = listaDeAutos.filter((auto => auto.marca.toUpperCase().includes(pusheo)))
     let enStock = resultado.filter(auto => auto.stock !== 0)
     if (enStock.length > 0) {
         carrito.push(...enStock)
@@ -73,46 +73,48 @@ function pushearCarrito() {
     } else {
         alert("No hay coincidencia con " + pusheo)
     }
-    
+
 }
 
 
 //LLAMAMOS A LA FUNCION
 
-let elegirAccion = prompt("BUSCAR 1-Marca-, 2-Modelo-, 3-Stock- // 4-Comprar-")
+let elegirAccion = Number(prompt("BUSCAR 1-Marca-, 2-Modelo-, 3-Stock- // 4-Comprar-"))
 
-while (elegirAccion) {
+
+while (!isNaN(elegirAccion)) {
     switch (elegirAccion) {
-        case "1":
+        case 1:
             filtrarAutosMarca();
             break;
-        case "2":
+        case 2:
             filtrarAutosModelo();
             break;
-        case "3":
+        case 3:
             mostrarStock()
             break;
-        case "4":
+        case 4:
             pushearCarrito()
         default:
             break;
     }
-    elegirAccion = prompt("BUSCAR 1-Marca-, 2-Modelo-, 3-Stock- // 4-Comprar-")
+    elegirAccion = Number(prompt("BUSCAR 1-Marca-, 2-Modelo-, 3-Stock- // 4-Comprar-"))
+
 
 }
-
+alert("Por favor, refresca e ingresa un número válido.");
 
 
 
 //SUMA DE PATENTAMIENTO AL CARRITO AL TERMINAR EL BUCLE Y LO MUESTRA POR CONSOLA
 
 function SumaPatentamiento() {
-    
-    let resultado = carrito.map((patentado) => patentado.precio * 1.5)
-        if (resultado.length > 0)
-        
-        console.log(resultado)
-    
-    }
 
-    SumaPatentamiento()
+    let resultado = carrito.map((patentado) => patentado.precio * 1.5)
+    if (resultado.length > 0)
+
+        console.log(resultado)
+
+}
+
+SumaPatentamiento()
